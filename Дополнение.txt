@@ -1,0 +1,30 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            bool TF = true;
+            do
+            {
+                try
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        Console.WriteLine($"Введите сколько часов проработал в {_weekDays[i]}");
+                        BobTime[i] = int.Parse(Console.ReadLine());
+                        if (BobTime[i] > 8)
+                        {
+                            BobTime[i] = 8;
+                        }
+                        else
+                        {
+                            if (BobTime[i] < 0)
+                            {
+                                BobTime[i] = 0;
+                            }
+                        }
+                    }
+                    TF = false;
+                }
+                catch
+                {
+                    Console.WriteLine("ОШИБКА!ПОПРОБУЙТЕ ЕЩЁ РАЗ!");
+                }
+            } while (TF);
